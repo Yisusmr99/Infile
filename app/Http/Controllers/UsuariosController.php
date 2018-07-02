@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Usuarios;
-// use App\Http\Requests\Request;
+use App\Http\Requests\UsuariostRequest;
 
 class UsuariosController extends Controller
 {
     public function index(){
-
         $products = Usuarios::orderBy('id', 'DESC')->paginate();
         return view('products.index', compact('products'));
     }
@@ -17,9 +16,8 @@ class UsuariosController extends Controller
         return view('products.create');
     }
     
-    public  function store(Request $request){
+    public  function store(UsuariostRequest $request){
         $product = new Usuarios;
-
         $product->nombre  = $request->nombre;
         $product->correo   = $request->correo;
         $product->telefono = $request->telefono;
@@ -35,7 +33,7 @@ class UsuariosController extends Controller
         return view('products.edit ', compact('product'));
     }
 
-    public  function update(Request $request, $id){
+    public  function update(UsuariostRequest $request, $id){
         
         $product = Usuarios::find($id);
         $product->nombre = $request->nombre;
@@ -55,8 +53,6 @@ class UsuariosController extends Controller
         $product = Usuarios::find($id);
         $product->delete();
         return  back()->with('info', 'El usuario fue eliminado.');
-    }
-
-    
+    }  
     
 }

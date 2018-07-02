@@ -18,14 +18,3 @@ Route::get('/', function () {
 
 Route::resource('product',       'UsuariosController');
 Route::resource('user',          'UserController');
-Route::any('principal',          'UserController@principal');
-Route::get('ver/{id}',           'UserController@ver');
-Route::delete('eliminar/{id}',      'UserController@eliminar');
-
-
-// Route::group(['prefix' => 'ws'], function () {
-
-//     Route::get('/user',	            'UserController@index');
-//     Route::post('/user/create',	    'UserController@store');
-
-// });

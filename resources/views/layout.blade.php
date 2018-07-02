@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1 class="page-header text-center">CRUD Laravel 5.4</h1>
+                <h1 class="page-header text-center">CRUD Laravel </h1>
             </div>
 
             @yield('content')
